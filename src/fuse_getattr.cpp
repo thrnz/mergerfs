@@ -141,7 +141,7 @@ namespace l
     if(symlinkify_ && symlinkify::can_be_symlink(*st_,symlinkify_timeout_))
       st_->st_mode = symlinkify::convert(st_->st_mode);
 
-    fs::inode::calc(fusepath_,st_);
+    fs::inode::calc(fusepath_,st_,basepaths[0]);
 
     return 0;
   }
